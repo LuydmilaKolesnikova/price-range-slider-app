@@ -17,8 +17,8 @@ function validateRange() {
   rangeFill.style.left = minPercentage + "%";
   rangeFill.style.width = maxPercentage - minPercentage + "%";
 
-  minValue.value = minPrice;
-  maxValue.value = maxPrice;
+  minValue.value = minPrice + " ₽";
+  maxValue.value = maxPrice + " ₽";
 }
 
 const inputElements = document.querySelectorAll(".range");
@@ -27,12 +27,23 @@ inputElements.forEach((element) => {
   element.addEventListener("input", validateRange);
 });
 
-minValue.addEventListener("input", validateValueRange);
-maxValue.addEventListener("input", validateValueRange);
+minValue.addEventListener("blur", validateValueRange);
+maxValue.addEventListener("blur", validateValueRange);
 
 function validateValueRange() {
-  let minPrice = Number(minValue.value)>=0 && Number(minValue.value)<Number(maxValue.value)-138 && parseInt(minValue.value);
+  let minPrice = parseInt(minValue.value);
   let maxPrice = parseInt(maxValue.value);
+  if (minPrice < 0 || minPrice > maxPrice || !Number(minPrice)) {
+    minPrice = 0;
+  } 
+   minValue.value = minPrice + " ₽";
+  
+  if (maxPrice > 1000 || maxPrice < maxPrice || !Number(maxPrice)) {
+    maxPrice = 1000;
+  } 
+  maxValue.value = maxPrice + " ₽";
+  
+  
   const minPercentage = ((minPrice) / 1000) * 100;
   const maxPercentage = ((maxPrice) / 1000) * 100;
   rangeFill.style.left = minPercentage + "%";
@@ -43,4 +54,5 @@ function validateValueRange() {
 
 validateRange();
 validateValueRange();
+
 
