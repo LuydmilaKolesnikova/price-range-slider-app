@@ -31,7 +31,7 @@ function validateRange() {
   maxValue.value = maxPrice + " ₽";
 }
 
-function validateValueRange() {
+function validateInputs() {
   let minPrice = parseInt(minValue.value);
   let maxPrice = parseInt(maxValue.value);
   if (maxPrice - minPrice < delta) {
@@ -64,8 +64,8 @@ inputElements.forEach((element) => {
   element.addEventListener("input", validateRange);
 });
 
-minValue.addEventListener("blur", validateValueRange);
-maxValue.addEventListener("blur", validateValueRange);
+minValue.addEventListener("blur", validateInputs);
+maxValue.addEventListener("blur", validateInputs);
 
 validateRange();
-validateValueRange();
+validateInputs();
