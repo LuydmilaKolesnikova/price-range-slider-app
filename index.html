@@ -1,47 +1,36 @@
-</html><!DOCTYPE html>
+</html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="style.css" />
-    <title>Price Range Slider</title>
-  </head>
-  <body>
-    <div class="card">
-      <div class="price-content">
-        <div>
-          <input id="min-value" class="value" value="100 ₽"></input>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <div>
-          <input id="max-value" class="value" value="900 ₽"></input>
-        </div>
+  <link rel="stylesheet" href="style.css" />
+  <title>Price Range Slider</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="price-content">
+      <div>
+        <input id="min-value" class="value" value="100 ₽"></input>
       </div>
 
-      <div class="range-slider">
-        <div class="range-fill"></div>
-
-        <input
-          type="range"
-          class="min-price range"
-          value="100"
-          min="0"
-          max="1000"
-          step="1"
-        />
-        <input
-          type="range"
-          class="max-price range"
-          value="900"
-          min="0"
-          max="1000"
-          step="1"
-          
-        />
+      <div>
+        <input id="max-value" class="value" value="900 ₽"></input>
       </div>
     </div>
 
-     <script src="script.js"></script>
-  </body>
+    <div class="range-slider" data-max="2000">
+      <div class="range-fill"></div>
+
+      <input type="range" class="min-price range" value="100" min="0" max="1000" step="1" />
+      <input type="range" class="max-price range" value="900" min="0" max="1000" step="1" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
