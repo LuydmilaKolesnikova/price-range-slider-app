@@ -12,6 +12,6 @@ A price range slider is a slider where the user can slide the meter to select th
 </ul>
 
 ## Setup
-<ol>
+<ul>
   <li>Clone the repository</li>
-</ol>
+</ul>
