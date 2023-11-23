@@ -67,8 +67,6 @@ inputElements.forEach((element) => {
 const valuesElements = [minValue, maxValue];
 valuesElements.forEach((element) => {
   element.addEventListener("blur", validateInputs);
-});
-valuesElements.forEach((element) => {
   element.addEventListener("keydown", function (e) {
     if (e.key == "Enter") {
       validateInputs();
