@@ -20,6 +20,8 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 23px;
+  border: none;
+  padding: 0;
 }
 
 .price-content {
@@ -37,11 +39,10 @@
 
 .range-fill {
   height: 14px;
-  background-color: #FDC840;
+  background-color: #fdc840;
   position: absolute;
   z-index: 1;
   border-radius: 30px;
-
 }
 
 input[type="range"] {
@@ -70,5 +71,4 @@ input[type="range"]::-webkit-slider-runnable-track {
   height: 12px;
   background-color: #ffecbb;
   border-radius: 30px;
-
 }
