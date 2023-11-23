@@ -34,12 +34,18 @@ function validateRange() {
 function validateValueRange() {
   let minPrice = parseInt(minValue.value);
   let maxPrice = parseInt(maxValue.value);
+  if (maxPrice - minPrice < delta) {
+    maxPrice - delta >= 0
+      ? (minPrice = maxPrice - delta)
+      : (maxPrice = minPrice + delta);
+  }
+
   if (minPrice < 0 || minPrice > maxPrice || !Number(minPrice)) {
     minPrice = 0;
   }
   minValue.value = minPrice + " ₽";
 
-  if (maxPrice > max || maxPrice < maxPrice || !Number(maxPrice)) {
+  if (maxPrice > max || !Number(maxPrice)) {
     maxPrice = max;
   }
   maxValue.value = maxPrice + " ₽";
