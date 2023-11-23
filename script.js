@@ -64,19 +64,16 @@ inputElements.forEach((element) => {
   element.addEventListener("input", validateRange);
 });
 
-minValue.addEventListener("blur", validateInputs);
-maxValue.addEventListener("blur", validateInputs);
-
-minValue.addEventListener("keydown", function (e) {
-  if (e.key == "Enter") {
-    validateInputs();
-  }
+const valuesElements = [minValue, maxValue];
+valuesElements.forEach((element) => {
+  element.addEventListener("blur", validateInputs);
 });
-
-maxValue.addEventListener("keydown", function (e) {
-  if (e.key == "Enter") {
-    validateInputs();
-  }
+valuesElements.forEach((element) => {
+  element.addEventListener("keydown", function (e) {
+    if (e.key == "Enter") {
+      validateInputs();
+    }
+  });
 });
 
 validateRange();
