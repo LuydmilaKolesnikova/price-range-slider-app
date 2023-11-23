@@ -70,6 +70,7 @@ valuesElements.forEach((element) => {
   element.addEventListener("keydown", function (e) {
     if (e.key == "Enter") {
       validateInputs();
+      element.blur();
     }
   });
 });
