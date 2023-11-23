@@ -67,5 +67,17 @@ inputElements.forEach((element) => {
 minValue.addEventListener("blur", validateInputs);
 maxValue.addEventListener("blur", validateInputs);
 
+minValue.addEventListener("keydown", function (e) {
+  if (e.key == "Enter") {
+    validateInputs();
+  }
+});
+
+maxValue.addEventListener("keydown", function (e) {
+  if (e.key == "Enter") {
+    validateInputs();
+  }
+});
+
 validateRange();
 validateInputs();
